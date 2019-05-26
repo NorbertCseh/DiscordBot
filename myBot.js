@@ -308,6 +308,32 @@ client.on("message", receiveMessage => {
         console.log(error);
       });
   }
+  if (receiveMessage.content == "Dé:Nash") {
+    Axios.get("https://www.youtube.com/channel/UCbgbVUSZ2I6fAAHiWxfZoOQ/videos")
+      .then(function(response) {
+        if (response.status == 200) {
+          const html = response.data;
+          const $ = Cheerio.load(html);
+          let videos = [];
+
+          $("h3").each((i, elm) => {
+            videos[i] = $(elm)
+              .find("a")
+              .attr("href");
+          });
+          videos = videos.filter(el => {
+            return el != null;
+          });
+          receiveMessage.channel.send(
+            "https://www.youtube.com" +
+              videos[Math.floor(Math.random() * videos.length)]
+          );
+        }
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+  }
 });
 
 function processCommand(messageIn) {
