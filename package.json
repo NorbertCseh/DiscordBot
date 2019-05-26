@@ -13,6 +13,7 @@
   "devDependencies": {},
   "scripts": {
     "test": "testit"
+    
   },
   "repository": {
     "type": "git",
