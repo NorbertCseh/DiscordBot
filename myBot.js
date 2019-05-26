@@ -334,6 +334,11 @@ client.on("message", receiveMessage => {
         console.log(error);
       });
   }
+  if (receiveMessage.content == "Info") {
+          receiveMessage.channel.send(
+            "!Valami: Random Gif Valamiről\n>Valami: Valami definicióját magyarázza\nTrump pls: A vezetőnk szentírásaiből idéz\nNorbi pls: Random szó és magyarázat\nTomi pls: Dankmemes\nMovie: Random film\nKifacsar: Ha megnyugodnál\nLil G: Minőségi zenék\nSzenny: Még több jó zene\nDé:Nash: Vallásunk alapja"
+          );
+  }
 });
 
 function processCommand(messageIn) {
