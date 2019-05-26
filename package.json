@@ -1,0 +1,27 @@
+{
+  "name": "discordbot-19941110",
+  "version": "1.0.0",
+  "description": "Discord Bot",
+  "main": "myBot.js",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "cheerio": "^1.0.0-rc.3",
+    "discord": "^0.8.2",
+    "discord.js": "^11.5.0",
+    "puppeteer": "^1.17.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "testit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NorbertCseh/DiscordBot.git"
+  },
+  "author": "NorbertCseh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NorbertCseh/DiscordBot/issues"
+  },
+  "homepage": "https://github.com/NorbertCseh/DiscordBot#readme"
+}
