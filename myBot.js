@@ -21,7 +21,7 @@ client.on("message", receiveMessage => {
   if (receiveMessage.content.startsWith("!")) {
     let uri = `http://api.giphy.com/v1/gifs/search?q=${processCommand(
       receiveMessage
-    )}&api_key=${keys.discordApiKey}&limit=5`;
+    )}&api_key=${keys.giphyKey}&limit=5`;
     Axios.get(uri)
       .then(function(response) {
         try {
@@ -314,4 +314,4 @@ function processCommand(messageIn) {
   return messageIn.content.substr(1).replace(" ", "+");
 }
 
-client.login(keys.chanelKey);
+client.login(keys.discordApiKey);
