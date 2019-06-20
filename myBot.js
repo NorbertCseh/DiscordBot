@@ -334,9 +334,35 @@ client.on("message", receiveMessage => {
         console.log(error);
       });
   }
+  if (receiveMessage.content == "Tomi Paul") {
+    Axios.get("https://www.youtube.com/channel/UCG8rbF3g2AMX70yOd8vqIZg/videos")
+      .then(function(response) {
+        if (response.status == 200) {
+          const html = response.data;
+          const $ = Cheerio.load(html);
+          let videos = [];
+
+          $("h3").each((i, elm) => {
+            videos[i] = $(elm)
+              .find("a")
+              .attr("href");
+          });
+          videos = videos.filter(el => {
+            return el != null;
+          });
+          receiveMessage.channel.send(
+            "https://www.youtube.com" +
+              videos[Math.floor(Math.random() * videos.length)]
+          );
+        }
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+  }
   if (receiveMessage.content == "Info") {
           receiveMessage.channel.send(
-            "!Valami: Random Gif Valamiről\n>Valami: Valami definicióját magyarázza\nTrump pls: A vezetőnk szentírásaiből idéz\nNorbi pls: Random szó és magyarázat\nTomi pls: Dankmemes\nMovie: Random film\nKifacsar: Ha megnyugodnál\nLil G: Minőségi zenék\nSzenny: Még több jó zene\nDé:Nash: Vallásunk alapja"
+            "!Valami: Random Gif Valamiről\n>Valami: Valami definicióját magyarázza\nTrump pls: A vezetőnk szentírásaiből idéz\nNorbi pls: Random szó és magyarázat\nTomi pls: Dankmemes\nMovie: Random film\nKifacsar: Ha megnyugodnál\nLil G: Minőségi zenék\nSzenny: Még több jó zene\nDé:Nash: Vallásunk alapja\nTomi Paul: You will see."
           );
   }
 });
