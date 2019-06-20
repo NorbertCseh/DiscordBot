@@ -4,7 +4,7 @@
   "description": "Discord Bot",
   "main": "myBot.js",
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "cheerio": "^1.0.0-rc.3",
     "discord": "^0.8.2",
     "discord.js": "^11.5.0",
