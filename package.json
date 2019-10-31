@@ -8,12 +8,13 @@
     "cheerio": "^1.0.0-rc.3",
     "discord": "^0.8.2",
     "discord.js": "^11.5.0",
+    "ffmpeg-binaries": "^4.0.0",
+    "opusscript": "0.0.7",
     "puppeteer": "^1.17.0"
   },
   "devDependencies": {},
   "scripts": {
     "test": "testit"
-    
   },
   "repository": {
     "type": "git",

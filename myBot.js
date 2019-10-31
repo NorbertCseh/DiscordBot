@@ -3,6 +3,7 @@ const client = new Discord.Client();
 const Axios = require("axios");
 const Cheerio = require("cheerio");
 const keys = require("./keys");
+const kifacsaro = "563253385050980354"
 
 client.on("ready", () => {
   console.log("Connected as: " + client.user.tag);
@@ -362,9 +363,35 @@ client.on("message", receiveMessage => {
   }
   if (receiveMessage.content == "Info") {
           receiveMessage.channel.send(
-            "!Valami: Random Gif Valamiről\n>Valami: Valami definicióját magyarázza\nTrump pls: A vezetőnk szentírásaiből idéz\nNorbi pls: Random szó és magyarázat\nTomi pls: Dankmemes\nMovie: Random film\nKifacsar: Ha megnyugodnál\nLil G: Minőségi zenék\nSzenny: Még több jó zene\nDé:Nash: Vallásunk alapja\nTomi Paul: You will see."
+            "!Valami: Random Gif Valamiről\n>Valami: Valami definicióját magyarázza\nTrump pls: A vezetőnk szentírásaiből idéz\nNorbi pls: Random szó és magyarázat\nTomi pls: Dankmemes\nMovie: Random film\nKifacsar: Ha megnyugodnál\nLil G: Minőségi zenék\nSzenny: Még több jó zene\nDé:Nash: Vallásunk alapja\nTomi Paul: You will see.\nPeti pls: IDK"
           );
   }
+  if (receiveMessage.content == "Peti pls") {
+    const imgArray = [
+      "https://media.discordapp.net/attachments/563253385050980352/638831559595786260/Nevtelen2.png",
+      "https://media.discordapp.net/attachments/563253385050980352/638773822014881792/Nevtelen.png",
+      "https://media.discordapp.net/attachments/563253385050980352/639035257022054411/Nevtelen3.png",
+      "https://cdn.discordapp.com/attachments/563253385050980352/639175699940507678/43496509_244823789539694_3379126671872360448_n.jpg",
+      "https://media.discordapp.net/attachments/563253385050980352/639372559594553354/neonreszeg.png"
+    ]
+    receiveMessage.channel.send(
+      imgArray[Math.floor(Math.random() * imgArray.length)]
+    );
+}
+
+  if (receiveMessage.content === "Ping") {
+    receiveMessage.channel.send(
+      "Pong"
+    );
+  }
+
+
+  if (receiveMessage.content === 'nem tudom') {
+    receiveMessage.channel.send(
+      "faszt nem"
+    );
+  }
+  
 });
 
 function processCommand(messageIn) {
