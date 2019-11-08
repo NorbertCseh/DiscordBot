@@ -385,6 +385,12 @@ client.on("message", receiveMessage => {
     );
   }
 
+  if (receiveMessage.content === "Neon?") {
+    receiveMessage.channel.send(
+      "Iszik"
+    );
+  }
+
 
   if (receiveMessage.content === 'nem tudom') {
     receiveMessage.channel.send(
